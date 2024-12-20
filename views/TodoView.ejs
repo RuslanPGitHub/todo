@@ -1,0 +1,46 @@
+<%- include('header.ejs') %>
+
+<h1 class="display-3">Todos</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">User ID</th>
+            <th scope="col">Due date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% todos.forEach(todo => { %>
+        <tr>
+            <th scope="row"><%= todo.id %></th>
+            <th><%= todo.title %></th>
+            <td><%= todo.description %></td>
+            <td><%= todo.user_id %></td>
+            <td><%= todo.due_date %></td>
+            <td><%= todo.status %></td>
+            <td>
+                <img
+                    class="icon-action"
+                    alt="Thumbnail [20x25]"
+                    style="width: 20px; height: 25px"
+                    src="/images/edit-svgrepo-com.svg"
+                    onclick="location.href='/update/<%= todo.id %>';"
+                />
+                <img
+                    class="icon-action"
+                    alt="Thumbnail [20x25]"
+                    style="width: 20px; height: 25px"
+                    src="/images/delete-svgrepo-com.svg"
+                    onclick="confirmDelete(<%= todo.id %>, 'todo')"
+                />
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+
+<%- include('footer.ejs') %>

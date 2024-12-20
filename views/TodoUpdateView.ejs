@@ -1,0 +1,68 @@
+<%- include('header.ejs') %>
+
+<h1 class="display-3">Update todo</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input
+            name="title"
+            type="text"
+            class="form-control"
+            id="tite"
+            placeholder="Title"
+            required
+            value="<%= todo[0].title %>"
+        />
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+            name="description"
+            class="form-control"
+            id="description"
+            rows="3"
+            required
+        >
+<%= todo[0].description %></textarea
+        >
+    </div>
+    <div class="form-group">
+        <label for="user_id">User ID</label>
+        <input
+            name="user_id"
+            type="text"
+            class="form-control"
+            id="user_id"
+            placeholder="User ID"
+            required
+            value="<%= todo[0].user_id %>"
+        />
+    </div>
+    <div class="form-group">
+        <label for="due_date">Due date</label>
+        <input
+            name="due_date"
+            type="date"
+            class="form-control"
+            id="due_date"
+            placeholder="Due date"
+            required
+            value="<%= todo[0].due_date %>"
+        />
+    </div>
+    <div class="form-group">
+        <label for="title">Status</label>
+        <input
+            name="status"
+            type="text"
+            class="form-control"
+            id="status"
+            placeholder="Status"
+            required
+            value="<%= todo[0].status %>"
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Update todo</button>
+
+    <%- include('footer.ejs') %>
+</form>

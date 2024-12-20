@@ -1,0 +1,64 @@
+<%- include('header.ejs') %> <% if (typeof lastID !== 'undefined') { %>
+<h5 class="text-primary">Todo added ID <%= lastID %></h5>
+<% } %>
+
+<h1 class="display-3">Add todo</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input
+            name="title"
+            type="text"
+            class="form-control"
+            id="tite"
+            placeholder="Title"
+            required
+        />
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+            name="description"
+            class="form-control"
+            id="description"
+            rows="3"
+            required
+        ></textarea>
+    </div>
+    <div class="form-group">
+        <label for="user_id">User ID</label>
+        <input
+            name="user_id"
+            type="text"
+            class="form-control"
+            id="user_id"
+            placeholder="User ID"
+            required
+        />
+    </div>
+    <div class="form-group">
+        <label for="due_date">Due date</label>
+        <input
+            name="due_date"
+            type="date"
+            class="form-control"
+            id="due_date"
+            placeholder="Due date"
+            required
+        />
+    </div>
+    <div class="form-group">
+        <label for="title">Status</label>
+        <input
+            name="status"
+            type="text"
+            class="form-control"
+            id="status"
+            placeholder="Status"
+            required
+        />
+    </div>
+    <button type="submit" class="btn btn-primary">Add todo</button>
+</form>
+
+<%- include('footer.ejs') %>
